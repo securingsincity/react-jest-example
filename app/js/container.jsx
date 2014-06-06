@@ -1,15 +1,18 @@
 var React = require('react'),
-gronkButton = require('./button.jsx');
+gronkButton = require('./button.jsx'),
+taskManager = require('./taskmanager.jsx');
+
 
 module.exports = React.createClass({
 
   render: function () {
     return (
       <div className="ui-builder">
-        <gronkButton />
+        <gronkButton name="james" />
         <br/>
-        <gronkButton />
-        Hi james
+        <gronkButton name="not james"/>
+        <taskManager/>
+
       </div>
     );
   }
