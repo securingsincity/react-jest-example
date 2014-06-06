@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
  source = require('vinyl-source-stream'),
- browserify = require('browserify');
+ browserify = require('browserify'),
+  connect = require('gulp-connect-multi')();
 // Load plugins
 var $ = require('gulp-load-plugins')();
 
@@ -21,16 +22,19 @@ gulp.task('scripts', function () {
     // .pipe($.jshint.reporter('default'))
     .pipe(gulp.dest('app/js'))
 
-    .pipe($.connect.reload())
+    .pipe(connect.reload())
 
     .on('error', $.util.beep);
 });
 
 // Connect
-gulp.task('connect', $.connect.server({
+gulp.task('connect', connect.server({
     root: ['app'],
     port: 9002,
-    livereload: true
+    livereload: true,
+    open:{
+    browser:  'Google Chrome' //'chrome'
+  }
 }));
 
 gulp.task('watch', ['scripts', 'connect'], function () {

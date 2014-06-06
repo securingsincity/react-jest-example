@@ -31,6 +31,7 @@
     "gulp": "~3.5.0",
     "gulp-concat": "~2.1.7",
     "gulp-connect": "~1.0.0",
+    "gulp-connect-multi": "^1.0.8",
     "gulp-jade": "~0.4.2",
     "gulp-jshint": "~1.4.0",
     "gulp-load-plugins": "~0.3.0",
