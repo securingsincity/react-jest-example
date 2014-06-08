@@ -1,3 +1,4 @@
+/** @jsx React.DOM */
 var React = require('react');
 
 
@@ -12,7 +13,7 @@ module.exports = React.createClass({
   render: function () {
     return (
       <div>
-        <button onClick={this.oClick}>{this.props.name}  </button> Count : {this.state.count}
+        <button onClick={this.oClick}>{this.props.name}</button> Count : {this.state.count}
       </div>
     );
   }

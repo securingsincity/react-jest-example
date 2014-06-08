@@ -1,3 +1,4 @@
+/** @jsx React.DOM */
 var React = require('react'),
 gronkButton = require('./button.jsx'),
 taskManager = require('./taskmanager.jsx');

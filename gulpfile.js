@@ -1,9 +1,8 @@
 var gulp = require('gulp'),
- source = require('vinyl-source-stream'),
- browserify = require('browserify'),
-  connect = require('gulp-connect-multi')();
-// Load plugins
-var $ = require('gulp-load-plugins')();
+  source = require('vinyl-source-stream'),
+  browserify = require('browserify'),
+  connect = require('gulp-connect-multi')(),
+  $ = require('gulp-load-plugins')();
 
 // Scripts
 gulp.task('scripts', function () {

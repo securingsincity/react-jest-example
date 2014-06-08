@@ -44,8 +44,15 @@
     "gulp-util": "~2.2.9",
     "jest-cli": "^0.1.15",
     "react-test-utils": "0.0.1",
+    "react-tools": "*",
     "reactify": "~0.10.0",
     "vinyl-source-stream": "~0.1.1"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "rootDir": "app",
+    "testPathIgnorePatterns": ["/node_modules/","<rootDir>/node_modules/"],
+    "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"]
   },
   "browserify": {
     "transform": [

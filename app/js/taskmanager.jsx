@@ -1,3 +1,4 @@
+/** @jsx React.DOM */
 var React = require('react');
 var Task = require('./task.jsx');
 
