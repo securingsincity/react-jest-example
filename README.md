@@ -15,6 +15,7 @@ npm install
 //and then run
 gulp
 ```
+Gulp runs all jsx transforms using browserify. 
 
 ---
 
