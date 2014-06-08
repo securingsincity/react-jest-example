@@ -25,7 +25,11 @@ gulp.task('scripts', function () {
 
     .on('error', $.util.beep);
 });
-
+//styles
+gulp.task('styles', function() {
+  //for now just reload the server
+  connect.reload()
+});
 // Connect
 gulp.task('connect', connect.server({
     root: ['app'],
@@ -38,4 +42,7 @@ gulp.task('connect', connect.server({
 
 gulp.task('watch', ['scripts', 'connect'], function () {
     gulp.watch(['app/js/**/*.js','app/js/**/*.jsx','!app/js/app.js'], ['scripts']);
+    gulp.watch(['app/css/**.css'], ['styles']);
 });
+
+gulp.task('default', ['watch']);
