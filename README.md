@@ -15,7 +15,7 @@ npm install
 //and then run
 gulp
 ```
-Gulp runs all jsx transforms using browserify. 
+Gulp runs all jsx transforms using browserify. It also will load the tests. 
 
 ---
 
@@ -24,3 +24,4 @@ To run the sample tests
 ```
 npm test
 ```
+Also the tests will run with `gulp test` or through the watch in the default gulp task
