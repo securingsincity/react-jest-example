@@ -2,6 +2,7 @@ var gulp = require('gulp'),
   source = require('vinyl-source-stream'),
   browserify = require('browserify'),
   connect = require('gulp-connect-multi')(),
+
   $ = require('gulp-load-plugins')();
 
 // Scripts
@@ -9,6 +10,7 @@ gulp.task('scripts', function () {
     return  browserify({
       entries: ['./app/js/main.jsx']
     })
+
     .on('error', function(log) {
       console.log(log);
     })
@@ -28,7 +30,14 @@ gulp.task('scripts', function () {
 //styles
 gulp.task('styles', function() {
   //for now just reload the server
-  connect.reload()
+  connect.reload();
+});
+
+gulp.task('test', function() {
+  return gulp.src('*.js', {read: false})
+  .pipe($.shell([
+    'jest'
+  ]));
 });
 // Connect
 gulp.task('connect', connect.server({
@@ -41,7 +50,7 @@ gulp.task('connect', connect.server({
 }));
 
 gulp.task('watch', ['scripts', 'connect'], function () {
-    gulp.watch(['app/js/**/*.js','app/js/**/*.jsx','!app/js/app.js'], ['scripts']);
+    gulp.watch(['app/js/**/*.js','app/js/**/*.jsx','!app/js/app.js'], ['scripts','test']);
     gulp.watch(['app/css/**.css'], ['styles']);
 });
 
