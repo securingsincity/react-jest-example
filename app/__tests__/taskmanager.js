@@ -39,6 +39,6 @@ describe('load container and check text', function() {
     expect(listItems.length).toEqual(1);
     var listItemSpan = TestUtils.findRenderedDOMComponentWithTag(listItems[0], 'span');
     //and that task should be get the groceries
-    expect(listItemSpan.getDOMNode().textContent).toEqual('Get the groceries');
+    expect(listItemSpan.getDOMNode().textContent).toEqual('1: Get the groceries');
  });
 });

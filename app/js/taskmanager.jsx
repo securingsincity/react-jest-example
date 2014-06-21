@@ -25,7 +25,7 @@ module.exports = React.createClass({
   render: function () {
     var self = this;
     var createItem = function(itemText,i) {
-      return <li ><Task name={itemText} onDestroy={self.destroyThis.bind(self, i)}  key={i}/></li>;
+      return <li ><Task name={itemText} onDestroy={self.destroyThis.bind(self, i)}  index={i} key={i}/></li>;
     };
     return (
       <div className="taskManager">
