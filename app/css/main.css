@@ -49,3 +49,11 @@ ul {
   border-radius: 10px;
   padding: 20px;
 }
+.taskManager {
+  margin-top: 20px;
+}
+
+.errorText {
+  color: #AA0000;
+  font-size: 14px;
+}
