@@ -1,7 +1,7 @@
 /** @jsx React.DOM */
 var React = require('react'),
-gronkButton = require('./button.jsx'),
-taskManager = require('./taskmanager.jsx');
+GronkButton = require('./button.jsx'),
+TaskManager = require('./taskmanager.jsx');
 
 
 module.exports = React.createClass({
@@ -9,11 +9,11 @@ module.exports = React.createClass({
   render: function () {
     return (
       <div className="ui-builder">
-        <h1>{this.props.name}</h1>
-        <gronkButton name="james" />
+        <h1 ref="header">{this.props.name}</h1>
+        <GronkButton name="james" />
         <br/>
-        <gronkButton name="not james"/>
-        <taskManager/>
+        <GronkButton name="not james"/>
+        <TaskManager/>
 
       </div>
     );

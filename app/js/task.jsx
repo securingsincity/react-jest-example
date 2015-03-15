@@ -5,7 +5,7 @@ module.exports = React.createClass({
   render: function () {
     return (
       <div className="task">
-        <button type="checkbox" onClick={this.props.onDestroy} >Complete</button> <span>{this.props.index + 1}: {this.props.name}</span >
+        <button type="checkbox" onClick={this.props.onDestroy} ref="completeButton">Complete</button> <span ref="text">{this.props.index + 1}: {this.props.name}</span >
       </div>
     );
   }

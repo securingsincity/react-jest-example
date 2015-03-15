@@ -7,7 +7,7 @@ var TestUtils = React.addons.TestUtils;
 describe('load container and check text', function() {
   it('check text', function() {
     var taskmanager = <Taskmanager />;
-    TestUtils.renderIntoDocument(taskmanager);
+    var taskmanager = TestUtils.renderIntoDocument(taskmanager);
     var button = TestUtils.findRenderedDOMComponentWithTag(
       taskmanager, 'button');
     expect(button.getDOMNode().textContent).toEqual('Add Task');
@@ -17,7 +17,7 @@ describe('load container and check text', function() {
 describe('load container and check text', function() {
   it('check text', function() {
     var taskmanager = <Taskmanager />;
-    TestUtils.renderIntoDocument(taskmanager);
+    var taskmanager = TestUtils.renderIntoDocument(taskmanager);
     //the value of the input should be empty
     var input = TestUtils.findRenderedDOMComponentWithTag(taskmanager, 'input');
     expect(input.getDOMNode().value).toBe('');

@@ -7,25 +7,23 @@ var TestUtils = React.addons.TestUtils;
 describe('load container and check text', function() {
   it('check text', function() {
     var container = <Container name="hi" />;
-    TestUtils.renderIntoDocument(container);
-    var h1 = TestUtils.findRenderedDOMComponentWithTag(
-      container, 'h1');
-    expect(h1.getDOMNode().textContent).toEqual('hi');
+    var DOM = TestUtils.renderIntoDocument(container);
+    expect(DOM.refs.header.getDOMNode().textContent).toEqual('hi');
  });
 });
 describe('load container and the right number of objects', function() {
-  it('check buttons', function() {
+  it('should have 3 buttons', function() {
     var container = <Container name="hi" />;
-    TestUtils.renderIntoDocument(container);
+    var DOM = TestUtils.renderIntoDocument(container);
     var buttons = TestUtils.scryRenderedDOMComponentsWithTag(
-      container, 'button');
+      DOM, 'button');
     expect(buttons.length).toEqual(3);
  });
- it('check buttons', function() {
+ it('should have 1 input', function() {
    var container = <Container name="hi" />;
-   TestUtils.renderIntoDocument(container);
+   var DOM = TestUtils.renderIntoDocument(container);
    var input = TestUtils.scryRenderedDOMComponentsWithTag(
-     container, 'input');
+     DOM, 'input');
    expect(input.length).toEqual(1);
 });
 });

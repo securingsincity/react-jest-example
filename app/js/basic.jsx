@@ -4,4 +4,4 @@ var Main = require('./button.jsx');
 global.$  = require('jquery');
 
 
-React.renderComponent(<Main name='Click Me'/>, document.getElementById("content"));
+React.render(<Main name='Click Me'/>, document.getElementById("content"));

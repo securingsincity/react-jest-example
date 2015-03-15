@@ -1,34 +1,27 @@
 /** @jsx React.DOM */
 jest.dontMock('../js/button.jsx');
 var React = require('react/addons');
-var gronkButton = require('../js/button.jsx');
+var GronkButton = require('../js/button.jsx');
 var TestUtils = React.addons.TestUtils;
 
 describe('button test', function() {
   it('changes the text after click', function() {
-    var button = <gronkButton name="hi"/>;
-    TestUtils.renderIntoDocument(button);
-    var div = TestUtils.findRenderedDOMComponentWithTag(
-      button, 'div');
-    var buttonDom = TestUtils.findRenderedDOMComponentWithTag(
-      button, 'button');
-    expect(div.getDOMNode().textContent).toEqual('hi Count : 0');
-    React.addons.TestUtils.Simulate.click(buttonDom.getDOMNode());
-    expect(div.getDOMNode().textContent).toEqual('hi Count : 1');
+    var button = <GronkButton name="hi"/>;
+    var DOM = TestUtils.renderIntoDocument(button);
+    expect(DOM.refs.gronkButton.getDOMNode().textContent).toEqual('hi Count : 0');
+    React.addons.TestUtils.Simulate.click(DOM.refs.button.getDOMNode());
+    expect(DOM.refs.gronkButton.getDOMNode().textContent).toEqual('hi Count : 1');
   });
 
   it('changes the text after multiple clicks', function() {
 
-    var button = <gronkButton name="hi"/>;
+    var button = <GronkButton name="hi"/>;
     TestUtils.renderIntoDocument(button);
-    var div = TestUtils.findRenderedDOMComponentWithTag(
-      button, 'div');
-    var buttonDom = TestUtils.findRenderedDOMComponentWithTag(
-      button, 'button');
-    expect(div.getDOMNode().textContent).toEqual('hi Count : 0');
+    var DOM = TestUtils.renderIntoDocument(button);
+    expect(DOM.refs.gronkButton.getDOMNode().textContent).toEqual('hi Count : 0');
     for(var i = 1; i < 10; i++){
-        React.addons.TestUtils.Simulate.click(buttonDom.getDOMNode());
-        expect(div.getDOMNode().textContent).toEqual('hi Count : '+i);
+      React.addons.TestUtils.Simulate.click(DOM.refs.button.getDOMNode());
+      expect(DOM.refs.gronkButton.getDOMNode().textContent).toEqual('hi Count : '+i);
     }
 
   });

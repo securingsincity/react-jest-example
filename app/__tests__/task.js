@@ -8,9 +8,8 @@ describe('task text', function() {
   it('the task text is accurate', function() {
     var index = 0;
     var task = <Task name="hi" index={index} />;
-    TestUtils.renderIntoDocument(task);
-    var span = TestUtils.findRenderedDOMComponentWithTag(
-      task, 'span');
+    var DOM = TestUtils.renderIntoDocument(task);
+    var span = DOM.refs.text;
     expect(span.getDOMNode().textContent).toEqual('1: hi');
  });
 
@@ -24,9 +23,8 @@ describe('task when clicked fires on destroy event', function() {
       testing = true;
     };
     var task = <Task name="hi" onDestroy={testingFunction} index="0"/>;
-    TestUtils.renderIntoDocument(task);
-    var input = TestUtils.findRenderedDOMComponentWithTag(
-      task, 'button');
+    var DOM = TestUtils.renderIntoDocument(task);
+    var input = DOM.refs.completeButton
     React.addons.TestUtils.Simulate.click(input.getDOMNode());
     expect(testing).toBe(true);
   });
